@@ -10,7 +10,7 @@ services:
     environment:
       CONTAINER: 1
       OTEL_SERVICE_NAME: load-testing
-      OTEL_EXPORTER_OTEL_ENDPOINT: "${OTEL_EXPORTER_OTEL_ENDPOINT:-http://host.docker.internal:4317}"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "${OTEL_EXPORTER_OTLP_ENDPOINT:-http://localhost:4317}"
       OTEL_SDK_DISABLED: "true"
       GRAFANA_URL: "http://${GRAFANA_HOST:-127.0.0.1}:${GRAFANA_PORT:-3000}/d/${GRAFANA_LOCUST_DASHBOARD:-qjIIww4Zz}/"
       PGHOST: timescaledb
