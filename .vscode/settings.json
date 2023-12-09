@@ -7,9 +7,10 @@
   },
   "files.insertFinalNewline": true,
   "files.exclude": {
-    ".mypy_cache": true,
-    ".ruff_cache": true,
-    ".venv": true,
+    ".mypy_cache/": true,
+    ".ruff_cache/": true,
+    ".venv/": true,
+    "**/__pycache__/": true
   },
   "editor.formatOnSave": true,
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
