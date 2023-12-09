@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  workspace:
+    depends_on:
+      - timescaledb
+    build:
+      context: .
+      target: workspace
+    environment:
+      CONTAINER: 1
+      OTEL_SERVICE_NAME: load-testing
+      OTEL_EXPORTER_OTEL_ENDPOINT: "${OTEL_EXPORTER_OTEL_ENDPOINT:-http://host.docker.internal:4317}"
+      OTEL_SDK_DISABLED: "true"
+      GRAFANA_URL: "http://${GRAFANA_HOST:-127.0.0.1}:${GRAFANA_PORT:-3000}/d/${GRAFANA_LOCUST_DASHBOARD:-qjIIww4Zz}/"
+      PGHOST: timescaledb
+      PGPORT: 5432
+      PGPASSWORD: password
+      PGUSER: postgres
+      PGDATABASE: postgres
+    ports:
+      - ${LOCUST_HOST:-127.0.0.1}:${LOCUST_PORT:-8089}:8089
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+  timescaledb:
+    image: timescale/timescaledb:2.11.1-pg15
+    volumes:
+      - ./timescaledb/initdb:/docker-entrypoint-initdb.d
+      - timescaledb-data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    environment:
+      POSTGRES_PASSWORD: password
+      TIMESCALEDB_TELEMETRY: off
+
+volumes:
+  timescaledb-data: {}

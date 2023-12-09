@@ -1,0 +1,16 @@
+**
+
+# Allow
+!poetry.lock
+!poetry.toml
+!pyproject.toml
+!requirements.txt
+
+# Exclude from allow
+**/*~
+**/*.log
+**/.DS_Store
+**/Thumbs.db
+**/__pycache__
+**/*.md
+**/*.rst

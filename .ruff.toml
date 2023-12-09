@@ -1,0 +1,14 @@
+target-version = "py311"
+select = ["ALL"]
+ignore = ["FIX", "TD003", "ANN101", "D100", "D105", "D106"]
+line-length = 120
+
+[extend-per-file-ignores]
+"__init__.py" = ["D104"]
+"environments/*/*.py" = ["INP001"]
+
+[pydocstyle]
+convention = "google"
+
+[isort]
+known-first-party = ["config"]

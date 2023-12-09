@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  workspace:
+    volumes:
+      - .:/workspace
+    environment:
+      OTEL_SERVICE_NAME: Locust
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4317
