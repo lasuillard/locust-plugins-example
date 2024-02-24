@@ -1,3 +1,3 @@
-# load-testing
+# testpack
 
-My load testing environment.
+My generic testing environment.
