@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  workspace:
+    image: mcr.microsoft.com/devcontainers/python:1-3.11-bookworm
+    volumes:
+      - ..:/workspaces/load-testing
+    environment:
+      CONTAINER: 1
+      OTEL_SERVICE_NAME: load-testing
+      OTEL_EXPORTER_OTLP_ENDPOINT: "${OTEL_EXPORTER_OTLP_ENDPOINT:-http://localhost:4317}"
+      OTEL_SDK_DISABLED: "true"
+      GRAFANA_URL: "http://${GRAFANA_HOST:-127.0.0.1}:${GRAFANA_PORT:-3000}/d/${GRAFANA_LOCUST_DASHBOARD:-qjIIww4Zz}/"
+      PGHOST: timescaledb
+      PGPORT: 5432
+      PGPASSWORD: password
+      PGUSER: postgres
+      PGDATABASE: postgres
+    ports:
+      - ${LOCUST_HOST:-127.0.0.1}:${LOCUST_PORT:-8089}:8089
+    healthcheck:
+      disable: true
