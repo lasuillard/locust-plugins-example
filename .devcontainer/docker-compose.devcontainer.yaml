@@ -4,7 +4,7 @@ services:
   workspace:
     image: mcr.microsoft.com/devcontainers/python:1-3.11-bookworm
     volumes:
-      - ..:/workspaces/load-testing
+      - .:/workspace
     environment:
       CONTAINER: 1
       OTEL_SERVICE_NAME: load-testing

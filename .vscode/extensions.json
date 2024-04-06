@@ -8,10 +8,7 @@
         "tamasfe.even-better-toml",
         "streetsidesoftware.code-spell-checker",
         "EditorConfig.EditorConfig",
-        "ms-python.black-formatter",
         "VisualStudioExptTeam.vscodeintellicode",
-        "charliermarsh.ruff",
-        "ms-python.mypy-type-checker",
-        "njpwerner.autodocstring"
+        "charliermarsh.ruff"
     ]
 }
