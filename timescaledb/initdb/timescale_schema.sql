@@ -16,25 +16,25 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 --
--- Name: timescaledb; Type: EXTENSION; Schema: -; Owner: 
+-- Name: timescaledb; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS timescaledb WITH SCHEMA public;
 
 --
--- Name: EXTENSION timescaledb; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION timescaledb; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION timescaledb IS 'Enables scalable inserts and complex queries for time-series data';
 
 --
--- Name: tablefunc; Type: EXTENSION; Schema: -; Owner: 
+-- Name: tablefunc; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS tablefunc WITH SCHEMA public;
 
 --
--- Name: EXTENSION tablefunc; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION tablefunc; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION tablefunc IS 'functions that manipulate whole tables, including crosstab';

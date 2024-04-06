@@ -33,7 +33,7 @@ update:  ## Update deps and tools
 .PHONY: update
 
 LOCUSTFILE = ./environments/tcp/locustfile.py
-LOCUST_ARGS = 
+LOCUST_ARGS =
 LOCUST_WORKERS = 10
 run:  ## Start Locust
 	docker compose run --rm \
